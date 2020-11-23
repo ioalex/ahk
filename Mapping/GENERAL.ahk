@@ -7,3 +7,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 CapsLock::Esc
 ; Use CTRL + CAPS LOCK to toggle between cases
 ^CapsLock::CapsLock
+
+; Right Alt key brings up the context menu
+RAlt::AppsKey
