@@ -3,7 +3,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-ProcessName=WindowsTerminal.exe
+; Variables
+ProcessName:="WindowsTerminal.exe"
+EnvGet, LocalAppData, LOCALAPPDATA
 
 ;Launch Windows Terminal (Win + `)
 #`::
@@ -22,7 +24,7 @@ If ProcessExist(ProcessName)
 
 ;Launch Windows Terminal if process does not already exist
 If !ProcessExist(ProcessName)
-  Run "C:\\Users\alex\AppData\Local\Microsoft\WindowsApps\wt.exe"
+  Run "%LocalAppData%\Microsoft\WindowsApps\wt.exe"
   return
 
 ProcessExist(Name) {
