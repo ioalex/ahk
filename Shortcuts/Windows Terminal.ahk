@@ -15,12 +15,14 @@ If ProcessExist(ProcessName)
   {
     WinActivate, % "ahk_pid " pid
   }
+  WinGetPos,,, sizeX, sizeY
+  WinMove, (A_ScreenWidth/2)-(sizeX/2), (A_ScreenHeight/2)-(sizeY/2)
+  WinShow
+  WinMinimize
 
 ;Launch Windows Terminal if process does not already exist
 If !ProcessExist(ProcessName)
   Run "C:\\Users\alex\AppData\Local\Microsoft\WindowsApps\wt.exe"
-  WinGetPos,,, sizeX, sizeY
-  WinMove, (A_ScreenWidth/2)-(sizeX/2), (A_ScreenHeight/2)-(sizeY/2)
   return
 
 ProcessExist(Name) {
