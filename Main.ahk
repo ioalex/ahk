@@ -20,6 +20,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 DetectHiddenWindows, On
 ;}
 
+; Icon
+;{-----------------------------------------------
+;
+Menu, Tray, Icon, Icon.ico
+;}
+
 ; INITIALIZATION - VARIABLES
 ;{-----------------------------------------------
 ;
